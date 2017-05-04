@@ -19,6 +19,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
+window.Vue = require('vue');
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-CSRF-TOKEN'] = window.Laravel.csrfToken;
@@ -30,11 +31,13 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  * allows your team to easily build robust real-time web applications.
  */
 
-// import Echo from 'laravel-echo'
+import Echo from 'laravel-echo'
 
-// window.Pusher = require('pusher-js');
+ window.Pusher = require('pusher-js');
 
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: 'your-pusher-key'
-// });
+ window.Echo = new Echo({
+   broadcaster: 'pusher',
+     key: 'c6c67272c54b0fdd05b1',
+     cluster: 'eu',
+     encrypted: true,
+ });
